@@ -1,0 +1,396 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
+html {
+  font-size: 7px;
+}
+
+html body {
+  margin: 0px;
+  padding: 0px;
+  background: #ffce3e;
+  font-size: 2.5rem;
+  padding: 20px 0;
+  font-family: 'Open Sans',sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #73808D;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.clearfix {
+  clear: both;
+  display: block;
+  content: '';
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+h4 {
+  margin: 0;
+}
+
+h5 {
+  margin: 0;
+}
+
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  width: 90%;
+  background: #fff;
+  border-top: 4px solid #000;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+}
+
+.container .left {
+  width: 100%;
+  padding-right: 15px;
+}
+
+@media (min-width: 576px) {
+  .container .left {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container .left {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container .left {
+    width: 70%;
+  }
+}
+
+.container .right {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (min-width: 576px) {
+  .container .right {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container .right {
+    width: 30%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container .right {
+    width: 30%;
+  }
+}
+
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1050px;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+
+h1.name {
+  font-size: 3rem;
+  padding: 28px 0 0 0;
+  font-weight: 700;
+  color: #101214;
+}
+
+@media (min-width: 576px) {
+  h1.name {
+    padding: 28px 0 0 0;
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  h1.name {
+    padding: 58px 0 0 0;
+    font-size: 4rem;
+  }
+}
+
+p.title {
+  font-size: 2.5rem;
+  font-weight: 200;
+  margin: 8px 0 68px 0;
+}
+
+@media (min-width: 576px) {
+  p.title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  p.title {
+    font-size: 3.2rem;
+  }
+}
+
+.title-block {
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+  color: #73808D;
+  font-weight: 200;
+  padding-bottom: 10px;
+}
+
+.list-item {
+  margin-bottom: 30px;
+  -webkit-transition: -webkit-box-shadow 1s;
+  transition: -webkit-box-shadow 1s;
+  transition: box-shadow 1s;
+  transition: box-shadow 1s, -webkit-box-shadow 1s;
+  padding: 20px;
+}
+
+.list-item:hover {
+  -webkit-box-shadow: 0px 25px 45px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 25px 45px 0px rgba(0, 0, 0, 0.15);
+}
+
+.list-item .poisition {
+  font-size: 2.7rem;
+  color: #101214;
+  font-weight: 700;
+  padding-bottom: 8px;
+}
+
+.list-item .name {
+  color: #101214;
+  font-size: 2.3rem;
+  font-weight: 400;
+  padding-bottom: 8px;
+}
+
+.list-item .date-location-status {
+  font-size: 1.9rem;
+  color: #73808D;
+  padding-bottom: 9px;
+}
+
+.list-item .description {
+  color: #101214;
+  font-size: 2rem;
+  line-height: 22px;
+}
+
+.list-item .description span {
+  color: #000;
+  font-weight: bold;
+  font-size: 1.8rem;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  display: block;
+  -webkit-transition: opacity 0.7s ease-out;
+  transition: opacity 0.7s ease-out;
+  opacity: 1;
+  height: auto;
+}
+
+.list-item .description span::before {
+  content: '―';
+  padding-right: 4px;
+}
+
+.list-item .view-experience {
+  margin-top: 20px;
+  display: none;
+}
+
+.list-item .view-experience .title {
+  font-weight: 300;
+  color: #101214;
+  font-size: 2.5rem;
+  padding-bottom: 8px;
+}
+
+.list-item .view-experience .item {
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+.list-item .view-experience .item .title {
+  font-weight: 700;
+  color: #000;
+  font-size: 2.1rem;
+  padding-bottom: 8px;
+}
+
+.list-item .view-experience .item .title::before {
+  content: '―';
+}
+
+.list-item .view-experience .item p {
+  font-weight: 400;
+  font-size: 2rem;
+  color: #73808D;
+  padding-left: 20px;
+}
+
+.list-item:hover .description span {
+  opacity: 0;
+  height: 0;
+}
+
+.profile-photo {
+  margin: 32px 0 32px 0;
+  position: absolute;
+  right: 8px;
+  top: -24px;
+  text-align: right;
+}
+
+.profile-photo img {
+  border-radius: 50%;
+  -webkit-transition: -webkit-box-shadow 0.5s;
+  transition: -webkit-box-shadow 0.5s;
+  transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s, -webkit-box-shadow 0.5s;
+  max-width: 54%;
+}
+
+.profile-photo img:hover {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.5);
+  box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.5);
+}
+
+@media (min-width: 992px) {
+  .profile-photo img {
+    max-width: 84%;
+  }
+}
+
+@media (min-width: 992px) {
+  .profile-photo img {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .profile-photo img {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .profile-photo {
+    font-size: 3.2rem;
+    position: inherit;
+    text-align: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  .profile-photo {
+    font-size: 3.2rem;
+    position: inherit;
+    text-align: left;
+  }
+}
+
+.widget {
+  color: #73808D;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 200;
+}
+
+.widget a {
+  font-weight: 200;
+}
+
+.widget span {
+  display: block;
+  font-weight: 400;
+}
+
+.widget strong {
+  font-weight: 700;
+  display: block;
+  padding-bottom: 4px;
+  font-size: 2.2rem;
+}
+
+.widget ul li {
+  font-weight: 200;
+  color: #73808D;
+  font-size: 2rem;
+  margin-bottom: 3px;
+}
+
+.pl-20 {
+  padding-left: 20px;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.activeItem {
+  display: block !important;
+}
+/*# sourceMappingURL=global.css.map */

@@ -1,0 +1,370 @@
+$yellow: #ffce3e;
+$white:#fff;
+$black:#000;
+$black_k:#101214;
+$gray:#73808D;
+$font-7: 7px;
+$font-2:2.5rem;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px
+);
+
+$breakpoint: map-get($breakpoints,sm);
+
+@mixin respond-above($breakpoint) {
+
+    // If the breakpoint exists in the map.
+    @if map-has-key($breakpoints, $breakpoint) {
+  
+      // Get the breakpoint value.
+      $breakpoint-value: map-get($breakpoints, $breakpoint);
+  
+      // Write the media query.
+      @media (min-width: $breakpoint-value) {
+        @content;
+      }
+  
+    // If the breakpoint doesn't exist in the map.
+    } @else {
+  
+      // Log a warning.
+      @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+}
+
+html{
+    font-size: $font-7;
+    body{
+        margin: 0px;
+        padding: 0px;
+        background: $yellow;
+        font-size: $font-2;
+        padding: 20px 0;
+        font-family: 'Open Sans',sans-serif;
+    }
+}
+
+a{
+    text-decoration:none;
+    color:$gray;
+}
+
+ul{
+    padding: 0;
+    margin:0;
+    list-style: none;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.clearfix{clear: both;display: block;content: '';}
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        margin: 0;
+    }
+}
+
+p{
+    margin: 0;
+}
+
+.container{
+    width: 90%;
+    background:$white;
+    border-top:4px solid $black;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+    .left{
+        width: 100%;
+        padding-right: 15px;
+        @include respond-above(xs) {
+            width: 100%;
+        }
+        @include respond-above(md) {
+            width: 70%;
+        }
+        @include respond-above(lg) {
+            width: 70%;
+        }
+    }
+    
+    .right{
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        @include respond-above(xs) {
+            width: 100%;
+        }
+        @include respond-above(md) {
+            width: 30%;
+        }
+        @include respond-above(lg) {
+            width: 30%;
+        }
+    }
+
+    @include respond-above(xs) {
+        width: 540px;
+    }
+
+    @include respond-above(sm) {
+        width: 720px;
+    }
+
+    @include respond-above(md) {
+        width: 960px;
+    }
+
+    @include respond-above(lg) {
+        width: 1050px;
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+
+}
+
+h1.name{
+    font-size: 3rem;
+    padding: 28px 0 0 0;
+    font-weight: 700;
+    color:$black_k;
+
+    @include respond-above(xs) {
+        padding: 28px 0 0 0;
+        font-size: 3rem;
+    }
+
+    @include respond-above(lg) {
+        padding: 58px 0 0 0;
+        font-size: 4rem;
+    }
+
+}
+
+p.title{
+    font-size: 2.5rem;
+    font-weight: 200;
+    margin:8px 0 68px 0;
+
+    @include respond-above(xs) {
+        font-size: 2.5rem;
+    }
+
+    @include respond-above(lg) {
+        font-size: 3.2rem;
+    }
+
+}
+
+.title-block{
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+    color:$gray;
+    font-weight: 200;
+    padding-bottom:10px;
+}
+
+.list-item{
+    margin-bottom: 30px;
+    transition: box-shadow 1s;
+    padding:20px;
+
+    &:hover{
+        box-shadow: 0px 25px 45px 0px rgba(0, 0, 0, 0.15);
+    }
+
+    .poisition{
+        font-size: 2.7rem;
+        color:$black_k;
+        font-weight: 700;
+        padding-bottom:8px;
+    }
+
+    .name{
+        color:$black_k;
+        font-size: 2.3rem;
+        font-weight: 400;
+        padding-bottom:8px;
+    }
+
+    .date-location-status{
+        font-size: 1.9rem;
+        color:$gray;
+        padding-bottom: 9px;
+    }
+
+    .description{
+        color:$black_k;
+        font-size: 2rem;
+        line-height: 22px;
+        
+        span{
+            color:$black;
+            font-weight: bold;
+            font-size: 1.8rem;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            display: block;
+            transition: opacity 0.7s ease-out;
+            opacity: 1;
+            height: auto;
+            &::before{
+                content:'―';
+                padding-right: 4px;
+            }
+        }
+
+    }
+
+    .view-experience{
+        margin-top: 20px; 
+        display: none;
+
+        .title{
+            font-weight: 300;
+            color:$black_k;
+            font-size:2.5rem;
+            padding-bottom: 8px;
+        }
+
+        .item{
+            padding-top:10px;
+            margin-bottom: 10px;
+
+            .title{
+                font-weight: 700;
+                color: $black;
+                font-size:2.1rem;
+                padding-bottom: 8px;
+
+                &::before{
+                    content:'―';
+                }
+
+            }
+
+            p{
+                font-weight: 400;
+                font-size: 2rem;
+                color:$gray;
+                padding-left: 20px;
+            }
+
+        }
+
+    }
+
+
+
+    &:hover .description span{
+        opacity: 0;
+        height: 0;
+    }
+     
+
+}
+
+
+
+.profile-photo{
+    margin:32px 0 32px 0;
+    position: absolute;
+    right: 8px;
+    top:-24px;
+    text-align: right;
+    img{
+        border-radius: 50%;
+        transition: box-shadow 0.5s;
+        max-width: 54%;
+        &:hover{
+            -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.5);
+            -moz-box-shadow:    0px 0px 5px 0px rgba(50, 50, 50, 0.5);
+            box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.5);
+        }
+
+        @include respond-above(md) {
+            max-width: 84%;
+        }
+        
+        @include respond-above(md) {
+            max-width: 100%;
+        }
+        
+        @include respond-above(lg) {
+            max-width: 100%;
+        }
+    
+    }
+
+    @include respond-above(md) {
+        font-size: 3.2rem;
+        position: inherit;
+        text-align: left;
+    }
+    
+    @include respond-above(lg) {
+        font-size: 3.2rem;
+        position: inherit;
+        text-align: left;
+    }
+
+}
+
+.widget{
+    color:$gray;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 200;
+
+    a{
+        font-weight: 200;
+    }
+
+    span{
+        display: block;
+        font-weight: 400;
+    }
+
+    strong{
+        font-weight: 700;
+        display: block;
+        padding-bottom: 4px;
+        font-size: 2.2rem;
+    }
+
+    ul{
+        li{
+            font-weight: 200;
+            color:$gray;
+            font-size: 2rem;
+            margin-bottom: 3px;
+        }
+    }
+
+}
+
+.pl-20{
+    padding-left: 20px;
+}
+
+.ml-20{
+    margin-left: 20px;
+}
+
+.activeItem{
+    display: block !important;
+}
